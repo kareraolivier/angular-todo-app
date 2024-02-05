@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Task } from '../../types/task.interface';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-task-item',
   standalone: true,
@@ -11,5 +12,8 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class TaskItemComponent {
   @Input() task?: Task;
+  @Output() onDeleteTask: EventEmitter<void> = new EventEmitter();
   faTimesCircle = faTimesCircle;
+
+  onDelete = (task?: Task) => this.onDeleteTask.emit();
 }
