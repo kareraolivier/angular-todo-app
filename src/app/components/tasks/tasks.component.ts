@@ -5,10 +5,16 @@ import { TaskService } from '../../services/task.service';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { error } from 'console';
+import { AddTaskComponent } from '../add-task/add-task.component';
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [CommonModule, TaskItemComponent, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    TaskItemComponent,
+    FontAwesomeModule,
+    AddTaskComponent,
+  ],
   templateUrl: './tasks.component.html',
 })
 export class TasksComponent implements OnInit {

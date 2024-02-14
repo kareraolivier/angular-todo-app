@@ -17,7 +17,7 @@ export const Tasks: Task[] = [
     id: 3,
     text: 'Sport',
     day: 'wednesday',
-    reminder: true,
+    reminder: false,
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const Tasks: Task[] = [
     id: 5,
     text: 'Dancing',
     day: 'Friday',
-    reminder: true,
+    reminder: false,
   },
   {
     id: 6,
