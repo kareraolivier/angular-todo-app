@@ -1,3 +1,22 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": 47118,
+      "task": "karera",
+      "day": "olivier",
+      "reminder": false
+    },
+    {
+      "id": 4265,
+      "task": "new task",
+      "day": "12 January",
+      "reminder": true
+    },
+    {
+      "id": 68157,
+      "task": "karera oliver",
+      "day": "02 feb",
+      "reminder": true
+    }
+  ]
 }

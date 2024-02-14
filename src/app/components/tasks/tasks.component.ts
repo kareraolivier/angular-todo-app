@@ -6,6 +6,7 @@ import { TaskItemComponent } from '../task-item/task-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { error } from 'console';
 import { AddTaskComponent } from '../add-task/add-task.component';
+
 @Component({
   selector: 'app-tasks',
   standalone: true,
@@ -29,10 +30,11 @@ export class TasksComponent implements OnInit {
     });
   }
   onDeleteTask = (task: Task) => {
-    // if (task) alert(`do you want to delete this task ${task?.text}`);
-
     this.taskServise.deleteTask(task).subscribe(() => {
       this.tasks = this.tasks.filter((task) => task.id !== task.id);
     });
+  };
+  addTask = (task: Task) => {
+    this.taskServise.addTask(task).subscribe((task) => this.tasks.push(task));
   };
 }

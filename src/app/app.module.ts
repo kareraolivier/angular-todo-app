@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [FormsModule],
-  providers: [],
+  imports: [ReactiveFormsModule],
 })
 export class AppModule {}

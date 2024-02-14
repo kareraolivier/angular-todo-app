@@ -1,16 +1,16 @@
 <form (submit)="onSubmit(); $event.preventDefault()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-96 ">
     <div class="mb-4">
         <label for="task" class="block text-gray-700 text-sm font-bold mb-1">Task</label>
-        <input type="text" name="task" id="task" placeholder="Enter task"
+        <input type="text" name="task" id="task" [formControl]="task" placeholder="Enter task"
             class="shadow appearance-none bg-gray-100 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
     <div class="mb-6">
         <label for="Day" class="block text-gray-700 text-sm font-bold mb-1">Day & time</label>
-        <input type="text" name="day" id="day" placeholder="Enter Day"
+        <input type="text" name="day" id="day" [formControl]="day" placeholder="Enter Day"
             class="shadow appearance-none bg-gray-100 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
     <div class="mb-4">
-        <input type="checkbox" name="reminder" id="reminder" class="mr-2 leading-tight">
+        <input type="checkbox" name="reminder" id="reminder" [formControl]="reminder" class="mr-2 leading-tight">
         <label for="reminder" class="text-gray-700">Reminder</label>
     </div>
     <div class="flex items-center justify-between">
