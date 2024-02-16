@@ -1,4 +1,5 @@
-<form (submit)="onSubmit(); $event.preventDefault()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-96 ">
+<form (submit)="onSubmit(); $event.preventDefault()" *ngIf="showAddTaskForm"
+    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-96">
     <div class="mb-4">
         <label for="task" class="block text-gray-700 text-sm font-bold mb-1">Task</label>
         <input type="text" name="task" id="task" [formControl]="task" placeholder="Enter task"
