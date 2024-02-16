@@ -21,18 +21,15 @@ export class TaskService {
     return this.http.get<Task[]>(url).pipe(catchError(this.handleError));
   }
 
+  deleteTask(task: Task): Observable<Task> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.delete<Task>(url).pipe(catchError(this.handleError));
+  }
   addTask(task: Task): Observable<Task> {
-    console.log(task);
     const url = this.apiUrl;
     return this.http
       .post<Task>(url, task, this.httpOptions)
       .pipe(catchError(this.handleError));
-  }
-
-  deleteTask(task: Task): Observable<Task> {
-    console.log('second', task.id);
-    const url = `${this.apiUrl}/${task.id}`;
-    return this.http.delete<Task>(url).pipe(catchError(this.handleError));
   }
 
   private handleError(error: any) {

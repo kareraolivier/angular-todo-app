@@ -17,21 +17,19 @@ import { AddTaskComponent } from '../add-task/add-task.component';
   ],
   templateUrl: './tasks.component.html',
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit {
   constructor(private taskServise: TaskService) {}
 
   tasks: Task[] = [];
+  ngOnInit() {
+    this.taskServise.getTasks().subscribe((tasks) => (this.tasks = tasks));
+  }
 
   onDeleteTask = (task: Task) => {
-    console.log(task);
     this.taskServise.deleteTask(task).subscribe(() => {
       this.tasks = this.tasks.filter((t) => t.id !== task.id);
     });
   };
-
-  ngOnInit() {
-    this.taskServise.getTasks().subscribe((tasks) => (this.tasks = tasks));
-  }
 
   addTask = (task: Task) => {
     this.taskServise.addTask(task).subscribe((task) => this.tasks.push(task));
